@@ -152,7 +152,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7511334534c08f14d94d5dcfda5af0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: []
+  sounds:
+  - clipName: Test1Random
+    singleClip: {fileID: 0}
+    randomize: 1
+    randomClips:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    volume: 1
+    pitch: 0
+    mixerGroup: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+  - clipName: Test2Single
+    singleClip: {fileID: 0}
+    randomize: 0
+    randomClips: []
+    volume: 0
+    pitch: 0
+    mixerGroup: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+  - clipName: 
+    singleClip: {fileID: 0}
+    randomize: 0
+    randomClips: []
+    volume: 0
+    pitch: 0
+    mixerGroup: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
+  - clipName: 
+    singleClip: {fileID: 0}
+    randomize: 0
+    randomClips: []
+    volume: 0
+    pitch: 0
+    mixerGroup: {fileID: 0}
+    loop: 0
+    playOnAwake: 0
 --- !u!4 &196160128
 Transform:
   m_ObjectHideFlags: 0

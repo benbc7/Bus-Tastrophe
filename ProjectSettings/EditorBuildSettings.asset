@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/MainMenu.unity
+    guid: fe5e56dfd960aeb4a8f197e50852cc1f
+  - enabled: 1
+    path: Assets/_Scenes/TestScenes/BusController.unity
+    guid: b993c055d421b704ca7061c5488657bb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5d13214efaba2d743b5883bec2d0204b, type: 2}

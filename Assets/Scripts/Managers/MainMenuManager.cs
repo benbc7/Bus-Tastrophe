@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
 
@@ -19,7 +20,7 @@ public class MainMenuManager : MonoBehaviour {
 	}
 
 	public void OnPlayButton () {
-		Debug.Log ("Play Button Pressed.");
+		SceneManager.LoadScene (1);
 	}
 
 	public void OnSettingsButton () {

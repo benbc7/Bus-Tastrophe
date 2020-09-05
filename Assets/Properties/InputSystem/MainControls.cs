@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Prefabs/InputSystem/MainControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Properties/InputSystem/MainControls.inputactions'
 
 using System;
 using System.Collections;
@@ -61,7 +61,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -72,7 +72,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -83,7 +83,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -94,7 +94,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -116,7 +116,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -127,7 +127,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -138,7 +138,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -149,7 +149,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -171,7 +171,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -182,7 +182,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -193,7 +193,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -204,7 +204,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -226,7 +226,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -237,7 +237,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -248,7 +248,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -259,7 +259,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -270,7 +270,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -281,7 +281,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -292,7 +292,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -303,7 +303,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -337,6 +337,70 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ClutchButton"",
+                    ""type"": ""Value"",
+                    ""id"": ""faa37e7b-291a-4686-8962-dba438fe809d"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""GearUpButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e78e3d3-b1d6-4519-b140-d39c9256aada"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""GearDownButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""567fa840-e173-44dc-9585-be154c3bacb0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""HandBrakeButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""e11bb9a4-b1b5-4946-bed6-ea18a930e854"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pitch"",
+                    ""type"": ""Value"",
+                    ""id"": ""644e3ed8-813f-4ca2-a0d8-409e3dfe8194"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Roll"",
+                    ""type"": ""Value"",
+                    ""id"": ""99215c48-5c47-4d36-8e66-db030383709f"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Yaw"",
+                    ""type"": ""Value"",
+                    ""id"": ""30020d90-3339-41a6-98a0-7b91ce80e735"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchCameraButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""9080f2f7-1109-41bf-b157-465f1b4debde"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -357,7 +421,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -368,7 +432,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -390,7 +454,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -401,7 +465,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -423,7 +487,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Gas"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -434,7 +498,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Gas"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -445,7 +509,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Gas"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -467,7 +531,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Brakes"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -478,7 +542,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""Brakes"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -489,8 +553,360 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
+                    ""groups"": ""DefaultKeyboardMouse"",
                     ""action"": ""Brakes"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""LeftStick(LeftandRight)"",
+                    ""id"": ""71e5f343-4f07-4b6b-b7f3-d3437a0cd232"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Yaw"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""52f10f07-fb83-4a5c-911c-9338299b080a"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""Yaw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""d4c8fa0c-64cf-4e4b-8ecb-c4c164732132"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""Yaw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""A and D Keys"",
+                    ""id"": ""44da6be6-95f3-4456-b937-6e2110e7f6d4"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Yaw"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b29fe66a-9b44-4907-8398-aae1afcc7bf9"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""Yaw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""d296462c-6fa8-4403-8aaf-5a69767104f5"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""Yaw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""LeftShift"",
+                    ""id"": ""13e166dc-8dbe-425b-804a-0dd515d76c18"",
+                    ""path"": ""1DAxis(minValue=0,whichSideWins=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClutchButton"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""807fa20a-231e-4f09-b49c-751a111c186e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""ClutchButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""0f5f51d1-86a6-4121-9f0d-4177542372cf"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""ClutchButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""LeftBumper"",
+                    ""id"": ""29e09656-c48d-477b-9ac0-3d4478ea9043"",
+                    ""path"": ""1DAxis(minValue=0)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClutchButton"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""94a63247-5820-40e1-9de7-75d67a78ef68"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""ClutchButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""47d25d35-6488-4945-b143-2442c0c30c69"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""ClutchButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""ArrowKeysHorizontal"",
+                    ""id"": ""d752475c-878f-4e35-91a6-34c16c4e0614"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Roll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""97873585-13ed-4398-aa6e-7328e51861d8"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1f44a5df-53ae-447f-9969-7cba9249e156"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""RightJoystick(Horizontal)"",
+                    ""id"": ""683374b5-c56f-47df-b944-52b40fc3bac5"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Roll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b6dac1a0-dcb9-4b5e-9730-2aa2d325682c"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""a861064f-eb78-45a4-b279-b505e40c9e06"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""ArrowKeysVertical"",
+                    ""id"": ""39773701-3d13-4abd-b651-d0c052d60ecc"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""d1b9768a-4ee0-4fe5-af65-da9bac1b56cb"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""6cf10855-d1de-4cd1-bdb5-b7e74d4b93c9"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""RightStick(Vertical)"",
+                    ""id"": ""6503f5f3-d4b7-4dd7-ad1b-70f4c6df5393"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""50db8770-a1f1-4b1e-b278-6ee911e62952"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""6c265623-b50e-4078-b699-fa2a8c9eead1"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83ff2a62-1324-4723-9672-4ea3fffbd50d"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""GearUpButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ff893c3-8499-4911-9139-77263aefb847"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""GearUpButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f07369c-f6a4-459b-bbec-ff6af4c9d161"",
+                    ""path"": ""<Keyboard>/rightShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""GearDownButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""806c0b83-4356-42ee-a023-4f3500d746ef"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""GearDownButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0b7641f4-11ce-4c81-818c-df8af5f2371c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""HandBrakeButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0466aea2-2bce-4a3d-85dd-bd64fbfe525e"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""HandBrakeButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7d9dff6-a9eb-49c4-a4ca-b4fe6587af81"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""SwitchCameraButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0b5711a5-6d06-46d0-821d-3448850796a2"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""SwitchCameraButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -516,7 +932,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Controllers"",
+                    ""groups"": ""DefaultControllers"",
                     ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -526,8 +942,8 @@ public class @MainControls : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Controllers"",
-            ""bindingGroup"": ""Controllers"",
+            ""name"": ""DefaultControllers"",
+            ""bindingGroup"": ""DefaultControllers"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
@@ -537,8 +953,8 @@ public class @MainControls : IInputActionCollection, IDisposable
             ]
         },
         {
-            ""name"": ""Keyboard and Mouse"",
-            ""bindingGroup"": ""Keyboard and Mouse"",
+            ""name"": ""DefaultKeyboardMouse"",
+            ""bindingGroup"": ""DefaultKeyboardMouse"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
@@ -564,6 +980,14 @@ public class @MainControls : IInputActionCollection, IDisposable
         m_DrivingControls_Steering = m_DrivingControls.FindAction("Steering", throwIfNotFound: true);
         m_DrivingControls_Gas = m_DrivingControls.FindAction("Gas", throwIfNotFound: true);
         m_DrivingControls_Brakes = m_DrivingControls.FindAction("Brakes", throwIfNotFound: true);
+        m_DrivingControls_ClutchButton = m_DrivingControls.FindAction("ClutchButton", throwIfNotFound: true);
+        m_DrivingControls_GearUpButton = m_DrivingControls.FindAction("GearUpButton", throwIfNotFound: true);
+        m_DrivingControls_GearDownButton = m_DrivingControls.FindAction("GearDownButton", throwIfNotFound: true);
+        m_DrivingControls_HandBrakeButton = m_DrivingControls.FindAction("HandBrakeButton", throwIfNotFound: true);
+        m_DrivingControls_Pitch = m_DrivingControls.FindAction("Pitch", throwIfNotFound: true);
+        m_DrivingControls_Roll = m_DrivingControls.FindAction("Roll", throwIfNotFound: true);
+        m_DrivingControls_Yaw = m_DrivingControls.FindAction("Yaw", throwIfNotFound: true);
+        m_DrivingControls_SwitchCameraButton = m_DrivingControls.FindAction("SwitchCameraButton", throwIfNotFound: true);
         // WalkingControls
         m_WalkingControls = asset.FindActionMap("WalkingControls", throwIfNotFound: true);
         m_WalkingControls_Newaction = m_WalkingControls.FindAction("New action", throwIfNotFound: true);
@@ -668,6 +1092,14 @@ public class @MainControls : IInputActionCollection, IDisposable
     private readonly InputAction m_DrivingControls_Steering;
     private readonly InputAction m_DrivingControls_Gas;
     private readonly InputAction m_DrivingControls_Brakes;
+    private readonly InputAction m_DrivingControls_ClutchButton;
+    private readonly InputAction m_DrivingControls_GearUpButton;
+    private readonly InputAction m_DrivingControls_GearDownButton;
+    private readonly InputAction m_DrivingControls_HandBrakeButton;
+    private readonly InputAction m_DrivingControls_Pitch;
+    private readonly InputAction m_DrivingControls_Roll;
+    private readonly InputAction m_DrivingControls_Yaw;
+    private readonly InputAction m_DrivingControls_SwitchCameraButton;
     public struct DrivingControlsActions
     {
         private @MainControls m_Wrapper;
@@ -675,6 +1107,14 @@ public class @MainControls : IInputActionCollection, IDisposable
         public InputAction @Steering => m_Wrapper.m_DrivingControls_Steering;
         public InputAction @Gas => m_Wrapper.m_DrivingControls_Gas;
         public InputAction @Brakes => m_Wrapper.m_DrivingControls_Brakes;
+        public InputAction @ClutchButton => m_Wrapper.m_DrivingControls_ClutchButton;
+        public InputAction @GearUpButton => m_Wrapper.m_DrivingControls_GearUpButton;
+        public InputAction @GearDownButton => m_Wrapper.m_DrivingControls_GearDownButton;
+        public InputAction @HandBrakeButton => m_Wrapper.m_DrivingControls_HandBrakeButton;
+        public InputAction @Pitch => m_Wrapper.m_DrivingControls_Pitch;
+        public InputAction @Roll => m_Wrapper.m_DrivingControls_Roll;
+        public InputAction @Yaw => m_Wrapper.m_DrivingControls_Yaw;
+        public InputAction @SwitchCameraButton => m_Wrapper.m_DrivingControls_SwitchCameraButton;
         public InputActionMap Get() { return m_Wrapper.m_DrivingControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -693,6 +1133,30 @@ public class @MainControls : IInputActionCollection, IDisposable
                 @Brakes.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnBrakes;
                 @Brakes.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnBrakes;
                 @Brakes.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnBrakes;
+                @ClutchButton.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnClutchButton;
+                @ClutchButton.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnClutchButton;
+                @ClutchButton.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnClutchButton;
+                @GearUpButton.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnGearUpButton;
+                @GearUpButton.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnGearUpButton;
+                @GearUpButton.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnGearUpButton;
+                @GearDownButton.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnGearDownButton;
+                @GearDownButton.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnGearDownButton;
+                @GearDownButton.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnGearDownButton;
+                @HandBrakeButton.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnHandBrakeButton;
+                @HandBrakeButton.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnHandBrakeButton;
+                @HandBrakeButton.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnHandBrakeButton;
+                @Pitch.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnPitch;
+                @Pitch.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnPitch;
+                @Pitch.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnPitch;
+                @Roll.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnRoll;
+                @Roll.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnRoll;
+                @Roll.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnRoll;
+                @Yaw.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnYaw;
+                @Yaw.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnYaw;
+                @Yaw.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnYaw;
+                @SwitchCameraButton.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnSwitchCameraButton;
+                @SwitchCameraButton.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnSwitchCameraButton;
+                @SwitchCameraButton.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnSwitchCameraButton;
             }
             m_Wrapper.m_DrivingControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -706,6 +1170,30 @@ public class @MainControls : IInputActionCollection, IDisposable
                 @Brakes.started += instance.OnBrakes;
                 @Brakes.performed += instance.OnBrakes;
                 @Brakes.canceled += instance.OnBrakes;
+                @ClutchButton.started += instance.OnClutchButton;
+                @ClutchButton.performed += instance.OnClutchButton;
+                @ClutchButton.canceled += instance.OnClutchButton;
+                @GearUpButton.started += instance.OnGearUpButton;
+                @GearUpButton.performed += instance.OnGearUpButton;
+                @GearUpButton.canceled += instance.OnGearUpButton;
+                @GearDownButton.started += instance.OnGearDownButton;
+                @GearDownButton.performed += instance.OnGearDownButton;
+                @GearDownButton.canceled += instance.OnGearDownButton;
+                @HandBrakeButton.started += instance.OnHandBrakeButton;
+                @HandBrakeButton.performed += instance.OnHandBrakeButton;
+                @HandBrakeButton.canceled += instance.OnHandBrakeButton;
+                @Pitch.started += instance.OnPitch;
+                @Pitch.performed += instance.OnPitch;
+                @Pitch.canceled += instance.OnPitch;
+                @Roll.started += instance.OnRoll;
+                @Roll.performed += instance.OnRoll;
+                @Roll.canceled += instance.OnRoll;
+                @Yaw.started += instance.OnYaw;
+                @Yaw.performed += instance.OnYaw;
+                @Yaw.canceled += instance.OnYaw;
+                @SwitchCameraButton.started += instance.OnSwitchCameraButton;
+                @SwitchCameraButton.performed += instance.OnSwitchCameraButton;
+                @SwitchCameraButton.canceled += instance.OnSwitchCameraButton;
             }
         }
     }
@@ -743,22 +1231,22 @@ public class @MainControls : IInputActionCollection, IDisposable
         }
     }
     public WalkingControlsActions @WalkingControls => new WalkingControlsActions(this);
-    private int m_ControllersSchemeIndex = -1;
-    public InputControlScheme ControllersScheme
+    private int m_DefaultControllersSchemeIndex = -1;
+    public InputControlScheme DefaultControllersScheme
     {
         get
         {
-            if (m_ControllersSchemeIndex == -1) m_ControllersSchemeIndex = asset.FindControlSchemeIndex("Controllers");
-            return asset.controlSchemes[m_ControllersSchemeIndex];
+            if (m_DefaultControllersSchemeIndex == -1) m_DefaultControllersSchemeIndex = asset.FindControlSchemeIndex("DefaultControllers");
+            return asset.controlSchemes[m_DefaultControllersSchemeIndex];
         }
     }
-    private int m_KeyboardandMouseSchemeIndex = -1;
-    public InputControlScheme KeyboardandMouseScheme
+    private int m_DefaultKeyboardMouseSchemeIndex = -1;
+    public InputControlScheme DefaultKeyboardMouseScheme
     {
         get
         {
-            if (m_KeyboardandMouseSchemeIndex == -1) m_KeyboardandMouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard and Mouse");
-            return asset.controlSchemes[m_KeyboardandMouseSchemeIndex];
+            if (m_DefaultKeyboardMouseSchemeIndex == -1) m_DefaultKeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("DefaultKeyboardMouse");
+            return asset.controlSchemes[m_DefaultKeyboardMouseSchemeIndex];
         }
     }
     public interface IMenuControlsActions
@@ -772,6 +1260,14 @@ public class @MainControls : IInputActionCollection, IDisposable
         void OnSteering(InputAction.CallbackContext context);
         void OnGas(InputAction.CallbackContext context);
         void OnBrakes(InputAction.CallbackContext context);
+        void OnClutchButton(InputAction.CallbackContext context);
+        void OnGearUpButton(InputAction.CallbackContext context);
+        void OnGearDownButton(InputAction.CallbackContext context);
+        void OnHandBrakeButton(InputAction.CallbackContext context);
+        void OnPitch(InputAction.CallbackContext context);
+        void OnRoll(InputAction.CallbackContext context);
+        void OnYaw(InputAction.CallbackContext context);
+        void OnSwitchCameraButton(InputAction.CallbackContext context);
     }
     public interface IWalkingControlsActions
     {

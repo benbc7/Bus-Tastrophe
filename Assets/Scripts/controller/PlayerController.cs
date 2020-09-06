@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActi
     // Start is called before the first frame update
     void Start()
     {
-        //player = ReInput.players.GetPlayer(0);
         vehicleController = GetComponent<VehicleController>();
         rb = GetComponent<Rigidbody>();
         startingLocation = transform.position;
@@ -44,10 +43,16 @@ public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActi
 
     }
 
+    private void Update()
+    {
+        vehicleController.updateVehicle(currentInput);
+    }
+
     private void FixedUpdate()
     {
         //generatePlayerInputs();
         vehicleController.fixedUpdateVehicle(currentInput);
+        currentInput.Reset();
     }
 
     public void OnSteering(InputAction.CallbackContext context)
@@ -70,15 +75,20 @@ public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActi
 	}
 
 	public void OnGearUpButton (InputAction.CallbackContext context) {
-        currentInput.gearUpButtonDown = context.ReadValue<bool> ();
-	}
+        if (context.started)
+            currentInput.gearUpButtonDown = true;
+    }
 
 	public void OnGearDownButton (InputAction.CallbackContext context) {
-        currentInput.gearDownButtonDown = context.ReadValue<bool> ();
+        if (context.started)
+            currentInput.gearDownButtonDown = true;
     }
 
 	public void OnHandBrakeButton (InputAction.CallbackContext context) {
-        currentInput.handBrakeButton = context.ReadValue<bool> ();
+        if (context.started)
+            currentInput.handBrakeButton = true;
+        if (context.canceled)
+            currentInput.handBrakeButton = false;
     }
 
 	public void OnPitch (InputAction.CallbackContext context) {

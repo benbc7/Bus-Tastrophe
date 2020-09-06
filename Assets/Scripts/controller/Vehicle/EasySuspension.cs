@@ -45,8 +45,10 @@ public class EasySuspension : MonoBehaviour
 
 			// Make sure the spring force at maximum droop is exactly zero
 			if (spring.targetPosition > 0 && setSuspensionDistance)
-				wc.suspensionDistance = wc.sprungMass * Physics.gravity.magnitude / (spring.targetPosition * spring.spring);
-		}
+            {
+                //wc.suspensionDistance = wc.sprungMass * Physics.gravity.magnitude / (spring.targetPosition * spring.spring);
+            }
+        }
 	}
 
   /*

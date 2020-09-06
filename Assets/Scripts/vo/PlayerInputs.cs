@@ -21,4 +21,10 @@ public class PlayerInputs : MonoBehaviour
     //Misc
     public bool slowMoButton;
 
+    public void Reset()
+    {
+        gearUpButtonDown = false;
+        gearDownButtonDown = false;
+    }
+
 }

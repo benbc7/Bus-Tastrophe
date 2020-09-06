@@ -27,12 +27,7 @@ public class WheelController : MonoBehaviour
 
     public void initializeWheel(DriveType driveType)
     {
-        if (wheelShape != null)
-        {
-            var ws = Instantiate(wheelShape);
-            ws.transform.parent = wheel.transform;
-            ws.transform.localPosition = Vector3.zero;
-        }
+        Debug.Log("Initializing wheel.");
         if (transform.localPosition.z > 0)
         {
             receivingTurnInput = true;
@@ -84,7 +79,7 @@ public class WheelController : MonoBehaviour
         wheel.brakeTorque = vehicleWheelMessage.currentBrake;
         if (!receivingTurnInput && pi.handBrakeButton)
             wheel.brakeTorque = 10000f;
-
+        calculateWheelMeshPositions();
         return wheelVehicleMessage;
     }
 

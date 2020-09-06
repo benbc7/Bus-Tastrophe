@@ -10,11 +10,10 @@ public class PhysicsController : MonoBehaviour
     public Transform trans;
     public Rigidbody rb;
     public Vector3 centerOfMass;
-    public int airFloat;
     public int downforce;
     public int pushSpeed;
     public int yawSpeed;
-    public int rotSpeed;
+    public int rollSpeed;
     public int pitchSpeed;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,29 @@ public class PhysicsController : MonoBehaviour
         rb = trans.GetComponent<Rigidbody>();
         rb.centerOfMass = centerOfMass;
     }
+    public void fixedUpdatePhysics(PlayerInputs playerInputs, VehicleWheelMessage vwm)
+    {
+            Debug.Log("Fixed update vehicle physics (Roll/pitch/yaw)");
+            rb.AddRelativeTorque(Vector3.up * playerInputs.yawInput * yawSpeed);
+            rb.AddRelativeTorque(Vector3.back * playerInputs.rollInput * rollSpeed);
+            rb.AddRelativeTorque(Vector3.right * playerInputs.pitchInput * pitchSpeed);
 
+        /*
+            float yawSpeedGoverner = (100f - (rb.velocity.magnitude * 3.6f)) / 100;
+            if (yawSpeedGoverner < 0)
+                yawSpeedGoverner = 0;
+
+            rb.AddRelativeTorque(Vector3.up * playerInputs.steeringInput * yawSpeed * yawSpeedGoverner);
+            */
+        //handbrake yaw power change
+        if (playerInputs.handBrakeButton)
+            rb.AddRelativeTorque(Vector3.up * playerInputs.steeringInput * yawSpeed * 2);
+
+        if (!vwm.isRedlined)
+            rb.AddRelativeForce(Vector3.forward * playerInputs.accelInput * pushSpeed);
+
+    }
+    /*
     public void fixedUpdatePhysics(PlayerInputs playerInputs, VehicleWheelMessage vwm)
     {
         Vector3 down = transform.TransformDirection(Vector3.down);
@@ -32,7 +53,7 @@ public class PhysicsController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * airFloat * (60 * Time.fixedDeltaTime));
             rb.AddRelativeTorque(Vector3.up * playerInputs.steeringInput * (yawSpeed / 3));
-            rb.AddRelativeTorque(Vector3.back * playerInputs.rollInput * rotSpeed);
+            rb.AddRelativeTorque(Vector3.back * playerInputs.rollInput * rollSpeed);
             rb.AddRelativeTorque(Vector3.right * playerInputs.pitchInput * pitchSpeed);
         }
         else //ground control forces
@@ -52,4 +73,5 @@ public class PhysicsController : MonoBehaviour
         rb.AddRelativeForce(Vector3.forward * playerInputs.accelInput * pushSpeed);
 
     }
+    */
 }

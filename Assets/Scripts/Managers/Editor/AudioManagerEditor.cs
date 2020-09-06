@@ -27,11 +27,6 @@ public class AudioManagerEditor : Editor {
     public override void OnInspectorGUI () {
         property.Update ();
 
-        if (GUILayout.Button ("Add Clip")) {
-            soundFoldoutDictionary.Add (soundList.arraySize, true);
-            soundList.InsertArrayElementAtIndex (soundList.arraySize);
-        }
-
         for (int i = 0; i < soundList.arraySize; i++) {
             SerializedProperty sound = soundList.GetArrayElementAtIndex(i);
             SerializedProperty clipName = sound.FindPropertyRelative ("clipName");
@@ -43,7 +38,9 @@ public class AudioManagerEditor : Editor {
                 clipTitle = clipName.stringValue;
             }
 
-            soundFoldoutDictionary [i] = EditorGUILayout.Foldout (soundFoldoutDictionary [i],clipTitle, true);
+            soundFoldoutDictionary [i] = EditorGUILayout.BeginFoldoutHeaderGroup (soundFoldoutDictionary [i], clipTitle);
+            if (soundFoldoutDictionary[i])
+                EditorGUILayout.BeginVertical (EditorStyles.helpBox);
 
             if (soundFoldoutDictionary [i]) {
                 SerializedProperty mixerGroup = sound.FindPropertyRelative ("mixerGroup");
@@ -61,6 +58,7 @@ public class AudioManagerEditor : Editor {
                 pitch.floatValue = EditorGUILayout.Slider ("Pitch", pitch.floatValue, 0f, 2f);
 
                 EditorGUILayout.BeginHorizontal ();
+                //GUILayout.FlexibleSpace ();
                 loop.boolValue = EditorGUILayout.Toggle ("Loop", loop.boolValue);
                 playOnAwake.boolValue = EditorGUILayout.Toggle ("Play On Awake", playOnAwake.boolValue);
                 EditorGUILayout.EndHorizontal ();
@@ -69,8 +67,9 @@ public class AudioManagerEditor : Editor {
 
                 if (randomize.boolValue) {
                     EditorGUILayout.BeginHorizontal ();
+                    //GUILayout.FlexibleSpace ();
                     EditorGUILayout.LabelField ("Random Clips");
-                    if (GUILayout.Button ("New Random Clip", GUILayout.MaxWidth (130), GUILayout.MaxHeight (20))) {
+                    if (GUILayout.Button ("New Random Clip")) {
                         randomClips.InsertArrayElementAtIndex (randomClips.arraySize);
                     }
                     EditorGUILayout.EndHorizontal ();
@@ -97,6 +96,15 @@ public class AudioManagerEditor : Editor {
                     soundFoldoutDictionary.Remove (i);
                 }
             }
+
+            if (soundFoldoutDictionary[i])
+                EditorGUILayout.EndVertical ();
+            EditorGUILayout.EndFoldoutHeaderGroup ();
+        }
+
+        if (GUILayout.Button ("Add Clip")) {
+            soundFoldoutDictionary.Add (soundList.arraySize, true);
+            soundList.InsertArrayElementAtIndex (soundList.arraySize);
         }
 
         property.ApplyModifiedProperties ();

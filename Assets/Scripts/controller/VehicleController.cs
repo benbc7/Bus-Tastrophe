@@ -101,6 +101,7 @@ public class VehicleController : MonoBehaviour
             {
                 var ws = Instantiate(wheelShape);
                 ws.transform.parent = wheelController.transform;
+                ws.transform.localPosition = Vector3.zero;
             }
         }
 

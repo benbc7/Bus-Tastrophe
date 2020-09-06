@@ -400,7 +400,7 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""id"": ""9080f2f7-1109-41bf-b157-465f1b4debde"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [

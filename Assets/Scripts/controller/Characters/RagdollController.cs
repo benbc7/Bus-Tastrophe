@@ -7,10 +7,19 @@ public class RagdollController : MonoBehaviour {
 	[HideInInspector]
 	public Rigidbody[] rigidBodies;
 
+	private CharacterJoint[] joints;
+
 	public float totalMass;
 	public CollisionDetectionMode collisionMode;
 
 	private CollisionDetectionMode currentCollisionMode;
+
+	private void Awake () {
+		joints = GetComponentsInChildren<CharacterJoint> ();
+		foreach (CharacterJoint joint in joints) {
+			joint.enableProjection = true;
+		}
+	}
 
 	public void GetAllRigidbodies () {
 		rigidBodies = GetComponentsInChildren<Rigidbody> ();

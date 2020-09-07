@@ -10,11 +10,15 @@ public class PhysicsController : MonoBehaviour
     public Transform trans;
     public Rigidbody rb;
     public Vector3 centerOfMass;
+    public Vector3 forwardPitchCenterOfMass;
+    public Vector3 backwardPitchCenterOfMass;
     public int downforce;
     public int pushSpeed;
     public int yawSpeed;
     public int rollSpeed;
     public int pitchSpeed;
+    public int forwardPitchSpeed;
+    public int backwardPitchSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +31,8 @@ public class PhysicsController : MonoBehaviour
             Debug.Log("Fixed update vehicle physics (Roll/pitch/yaw)");
             rb.AddRelativeTorque(Vector3.up * playerInputs.yawInput * yawSpeed);
             rb.AddRelativeTorque(Vector3.back * playerInputs.rollInput * rollSpeed);
-            rb.AddRelativeTorque(Vector3.right * playerInputs.pitchInput * pitchSpeed);
+       
+        rb.AddRelativeTorque(Vector3.right * playerInputs.pitchInput * pitchSpeed);
 
         /*
             float yawSpeedGoverner = (100f - (rb.velocity.magnitude * 3.6f)) / 100;
@@ -42,6 +47,21 @@ public class PhysicsController : MonoBehaviour
 
         if (!vwm.isRedlined)
             rb.AddRelativeForce(Vector3.forward * playerInputs.accelInput * pushSpeed);
+
+        if (playerInputs.pitchInput > 0)
+        {
+            rb.centerOfMass = forwardPitchCenterOfMass;
+            //for wheelies
+            rb.AddRelativeTorque(Vector3.right * playerInputs.pitchInput * forwardPitchSpeed);
+            rb.centerOfMass = centerOfMass;
+        }
+        else
+        {
+            rb.centerOfMass = backwardPitchCenterOfMass;
+            //for nose wheelies/endos
+            rb.AddRelativeTorque(Vector3.right * playerInputs.pitchInput * backwardPitchSpeed);
+            rb.centerOfMass = centerOfMass;
+        }
 
     }
     /*

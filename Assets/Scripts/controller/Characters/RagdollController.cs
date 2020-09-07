@@ -47,7 +47,7 @@ public class RagdollController : MonoBehaviour {
 	public void SetRagdollActive (bool active, Vector3 velocity) {
 		SetRagdollActive (active);
 		foreach (Rigidbody rb in rigidBodies) {
-			rb.AddForce (velocity * 50f);
+			rb.velocity = velocity;
 		}
 	}
 
@@ -98,6 +98,16 @@ public class RagdollController : MonoBehaviour {
 			rb.GetComponent<Collider> ().material = mat;
 		}
 		currentMaterial = mat;
+	}
+
+	private void Reset () {
+		if (rigidBodies == null)
+			GetAllRagdollComponents ();
+		float mass = 0f;
+		foreach (Rigidbody rb in rigidBodies) {
+			mass += rb.mass;
+		}
+		totalMass = mass;
 	}
 
 	private void OnValidate () {

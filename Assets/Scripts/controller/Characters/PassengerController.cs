@@ -15,9 +15,9 @@ public class PassengerController : MonoBehaviour {
 
 	private void Update () {
 		if (Mouse.current.leftButton.wasPressedThisFrame)
-			animator.SetBool ("isWalking", true);
+			animator.SetBool ("isRunning", true);
 		if (Mouse.current.leftButton.wasReleasedThisFrame)
-			animator.SetBool ("isWalking", false);
+			animator.SetBool ("isRunning", false);
 
 		if (Mouse.current.rightButton.wasPressedThisFrame) {
 			ActivateRagdoll ();
@@ -27,8 +27,8 @@ public class PassengerController : MonoBehaviour {
 	private void ActivateRagdoll () {
 		AnimatorClipInfo[] clipInfos = animator.GetCurrentAnimatorClipInfo (0);
 		Vector3 velocity = clipInfos [0].clip.averageSpeed;
-		Debug.Log (velocity);
 		animator.enabled = false;
-		ragdollController.SetRagdollActive (true);
+		velocity = transform.TransformDirection (velocity);
+		ragdollController.SetRagdollActive (true, velocity);
 	}
 }

@@ -59,7 +59,7 @@ public class TimedEventManager : GameManager
         SplitTrigger[] splits = FindObjectsOfType<SplitTrigger>();
         print("splits: " + splits.Length);
         splitCount = splits.Length;
-
+        Debug.Log("split count: " + splitCount);
         for (int i = 0; i < splitCount; i++)
         {
             GameObject go = Instantiate(splitUI, widget.transform);

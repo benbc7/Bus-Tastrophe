@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 //using Rewired;
 
 public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActions
@@ -104,9 +105,9 @@ public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActi
     }
 
 	public void OnSwitchCameraButton (InputAction.CallbackContext context) {
-        //currentInput = context.ReadValue<bool> ();
+        SceneManager.LoadScene("BusController");
     }
-	/*
+    /*
 private void generatePlayerInputs()
 {
 currentInput.accelInput = player.GetAxisRaw("Accelerate");
@@ -129,7 +130,6 @@ vehicleController.updateVehicle(currentInput);
 if (player.GetButtonDown("Reset"))
 {
 print("player reset");
-resetPlayer();
 }
 
 if (player.GetButtonDown("ToggleControlsText"))
@@ -141,10 +141,10 @@ GameManager.instance.toggleControlsDisplay();
 
 }
 
-public void resetPlayer()
+*/
+    public void resetPlayer()
 {
 vehicleController.resetVehicle(startingLocation, startingRotation);
 }
 
-*/
 }

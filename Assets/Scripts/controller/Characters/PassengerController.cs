@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent (typeof (Animator))]
+[RequireComponent (typeof (RagdollController))]
 public class PassengerController : MonoBehaviour {
+
+	public bool ragdollEnabled;
 
 	private Animator animator;
 	private RagdollController ragdollController;
@@ -11,6 +15,11 @@ public class PassengerController : MonoBehaviour {
 	private void Awake () {
 		animator = GetComponent<Animator> ();
 		ragdollController = GetComponent<RagdollController> ();
+	}
+
+	private void Start () {
+		if (ragdollEnabled)
+			ActivateRagdoll ();
 	}
 
 	private void Update () {

@@ -105,7 +105,10 @@ public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActi
     }
 
 	public void OnSwitchCameraButton (InputAction.CallbackContext context) {
-        SceneManager.LoadScene("BusController");
+        if (context.started)
+            SceneManager.LoadScene("BusController");
+        //if (context.started)
+            //LevelManager.instance.ResetLevel ();
     }
     /*
 private void generatePlayerInputs()

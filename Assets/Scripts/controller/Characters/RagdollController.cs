@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RagdollController : MonoBehaviour {
 
-	public bool ragdollEnabled;
+	//public bool ragdollEnabled;
 	public PhysicMaterial physicsMaterial;
 	public float totalMass;
 	public CollisionDetectionMode collisionMode;
@@ -22,7 +22,6 @@ public class RagdollController : MonoBehaviour {
 		foreach (CharacterJoint joint in joints) {
 			joint.enableProjection = true;
 		}
-		SetRagdollActive (ragdollEnabled);
 	}
 
 	public void SetRagdollActive (bool active) {
@@ -119,10 +118,6 @@ public class RagdollController : MonoBehaviour {
 		if (collisionMode != currentCollisionMode) {
 			SetCollisionDetectionMode ();
 			currentCollisionMode = collisionMode;
-		}
-
-		if (ragdollEnabled != ragdollCurrentlyEnabled) {
-			SetRagdollActive (ragdollEnabled);
 		}
 
 		if (physicsMaterial != currentMaterial) {

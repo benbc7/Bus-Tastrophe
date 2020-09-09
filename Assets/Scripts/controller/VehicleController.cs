@@ -94,7 +94,6 @@ public class VehicleController : MonoBehaviour
 
         foreach (WheelController wheelController in wheelControllers)
         {
-            print("Wheel " + wheelController.gameObject.name);
             wheelController.initializeWheel(driveType);
             // Create wheel shapes only when needed.
             if (wheelShape != null)

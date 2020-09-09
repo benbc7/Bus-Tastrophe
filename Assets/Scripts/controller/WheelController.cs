@@ -27,7 +27,7 @@ public class WheelController : MonoBehaviour
 
     public void initializeWheel(DriveType driveType)
     {
-        Debug.Log("Initializing wheel.");
+        //Debug.Log("Initializing wheel.");
         if (transform.localPosition.z > 0)
         {
             receivingTurnInput = true;

@@ -28,7 +28,6 @@ public class PhysicsController : MonoBehaviour
     }
     public void fixedUpdatePhysics(PlayerInputs playerInputs, VehicleWheelMessage vwm)
     {
-            Debug.Log("Fixed update vehicle physics (Roll/pitch/yaw)");
             rb.AddRelativeTorque(Vector3.up * playerInputs.yawInput * yawSpeed);
             rb.AddRelativeTorque(Vector3.back * playerInputs.rollInput * rollSpeed);
        

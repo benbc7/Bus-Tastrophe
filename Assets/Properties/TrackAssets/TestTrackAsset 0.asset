@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a59df90cd6eb540b07f3a59bc3c354, type: 3}
+  m_Name: TestTrackAsset 0
+  m_EditorClassIdentifier: 
+  trackPreviewPrefab: {fileID: 2428011865689758182, guid: 3760dba6dedd9c14eaf221ff3e35f771, type: 3}
+  sceneBuildIndex: 1
+  trackName: Test Track 1
+  defaultBestTimeInSeconds: 35
+  bestTimeInSeconds: 0
+  trackID: 0

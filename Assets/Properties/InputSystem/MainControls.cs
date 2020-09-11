@@ -938,6 +938,268 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CameraControls"",
+            ""id"": ""1115514f-730f-4013-97b0-e53e2d75b821"",
+            ""actions"": [
+                {
+                    ""name"": ""CameraLook"",
+                    ""type"": ""Value"",
+                    ""id"": ""61b2abd2-bc3b-47fa-8b21-50a21af5b1bb"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CameraMove"",
+                    ""type"": ""Value"",
+                    ""id"": ""cf7afaaf-d1d6-45dc-b879-7a798fca32ba"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""UpButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d63ab4b-baaf-446c-aed3-b082b9de1af8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""DownButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""96a3e905-c65b-4e1c-b980-928a7bd1dd86"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MoveFasterButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""c22edac6-e97a-46da-b0ec-95d2ea6f60ac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""BackButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""57397ede-e88b-4797-ad2d-556ff208908e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ScreenshotButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""503ab5a8-09ea-4c87-a2bd-5a5b51b9edeb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c872194f-0210-41d5-90ef-0c526fad8176"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""CameraLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2552e3ef-53fe-4688-b7ce-68170527c321"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=0.1,y=0.1)"",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""CameraLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""64632139-22b8-401c-b10b-d4d2ea8a60bd"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
+                    ""groups"": """",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""53bdeea6-dff0-49a1-9cfc-4be28cbb6923"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""37002b61-f896-4d96-becc-d011e3abe829"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""89027415-f31f-469e-97cf-5ebc6b059a90"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""94c06b4d-b04d-4ecc-a306-47cf03f7dbf9"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81f76d57-36f1-4df1-ae34-ce38a1551b41"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""CameraMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a961bdd-ff3c-42c7-ac73-e7264c274b2f"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""UpButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2f0b526-58cb-4e31-8970-9a0714ecf460"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""UpButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aad3037b-b13a-4216-ad8f-5fbd60ce3d2a"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""DownButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""683fc000-89dc-4a3c-831e-54b96c1054e5"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""DownButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75db9383-c912-4b09-9e69-0e171d79f511"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""MoveFasterButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f72d02b7-5f9c-4afe-a101-5ada22ad362e"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""MoveFasterButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dca600f6-0ee1-4b76-83ca-0b4ee2089c74"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""BackButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5adafb7-7f66-4496-ad02-091d7255a621"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""BackButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2eb2f86d-0182-48ce-8663-676ba324a88e"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""ScreenshotButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""759ac3dd-b3f4-4977-806f-4b5842bc2ed1"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""ScreenshotButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -991,6 +1253,15 @@ public class @MainControls : IInputActionCollection, IDisposable
         // WalkingControls
         m_WalkingControls = asset.FindActionMap("WalkingControls", throwIfNotFound: true);
         m_WalkingControls_Newaction = m_WalkingControls.FindAction("New action", throwIfNotFound: true);
+        // CameraControls
+        m_CameraControls = asset.FindActionMap("CameraControls", throwIfNotFound: true);
+        m_CameraControls_CameraLook = m_CameraControls.FindAction("CameraLook", throwIfNotFound: true);
+        m_CameraControls_CameraMove = m_CameraControls.FindAction("CameraMove", throwIfNotFound: true);
+        m_CameraControls_UpButton = m_CameraControls.FindAction("UpButton", throwIfNotFound: true);
+        m_CameraControls_DownButton = m_CameraControls.FindAction("DownButton", throwIfNotFound: true);
+        m_CameraControls_MoveFasterButton = m_CameraControls.FindAction("MoveFasterButton", throwIfNotFound: true);
+        m_CameraControls_BackButton = m_CameraControls.FindAction("BackButton", throwIfNotFound: true);
+        m_CameraControls_ScreenshotButton = m_CameraControls.FindAction("ScreenshotButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1231,6 +1502,87 @@ public class @MainControls : IInputActionCollection, IDisposable
         }
     }
     public WalkingControlsActions @WalkingControls => new WalkingControlsActions(this);
+
+    // CameraControls
+    private readonly InputActionMap m_CameraControls;
+    private ICameraControlsActions m_CameraControlsActionsCallbackInterface;
+    private readonly InputAction m_CameraControls_CameraLook;
+    private readonly InputAction m_CameraControls_CameraMove;
+    private readonly InputAction m_CameraControls_UpButton;
+    private readonly InputAction m_CameraControls_DownButton;
+    private readonly InputAction m_CameraControls_MoveFasterButton;
+    private readonly InputAction m_CameraControls_BackButton;
+    private readonly InputAction m_CameraControls_ScreenshotButton;
+    public struct CameraControlsActions
+    {
+        private @MainControls m_Wrapper;
+        public CameraControlsActions(@MainControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CameraLook => m_Wrapper.m_CameraControls_CameraLook;
+        public InputAction @CameraMove => m_Wrapper.m_CameraControls_CameraMove;
+        public InputAction @UpButton => m_Wrapper.m_CameraControls_UpButton;
+        public InputAction @DownButton => m_Wrapper.m_CameraControls_DownButton;
+        public InputAction @MoveFasterButton => m_Wrapper.m_CameraControls_MoveFasterButton;
+        public InputAction @BackButton => m_Wrapper.m_CameraControls_BackButton;
+        public InputAction @ScreenshotButton => m_Wrapper.m_CameraControls_ScreenshotButton;
+        public InputActionMap Get() { return m_Wrapper.m_CameraControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CameraControlsActions set) { return set.Get(); }
+        public void SetCallbacks(ICameraControlsActions instance)
+        {
+            if (m_Wrapper.m_CameraControlsActionsCallbackInterface != null)
+            {
+                @CameraLook.started -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnCameraLook;
+                @CameraLook.performed -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnCameraLook;
+                @CameraLook.canceled -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnCameraLook;
+                @CameraMove.started -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnCameraMove;
+                @CameraMove.performed -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnCameraMove;
+                @CameraMove.canceled -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnCameraMove;
+                @UpButton.started -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnUpButton;
+                @UpButton.performed -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnUpButton;
+                @UpButton.canceled -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnUpButton;
+                @DownButton.started -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnDownButton;
+                @DownButton.performed -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnDownButton;
+                @DownButton.canceled -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnDownButton;
+                @MoveFasterButton.started -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnMoveFasterButton;
+                @MoveFasterButton.performed -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnMoveFasterButton;
+                @MoveFasterButton.canceled -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnMoveFasterButton;
+                @BackButton.started -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnBackButton;
+                @BackButton.performed -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnBackButton;
+                @BackButton.canceled -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnBackButton;
+                @ScreenshotButton.started -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnScreenshotButton;
+                @ScreenshotButton.performed -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnScreenshotButton;
+                @ScreenshotButton.canceled -= m_Wrapper.m_CameraControlsActionsCallbackInterface.OnScreenshotButton;
+            }
+            m_Wrapper.m_CameraControlsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CameraLook.started += instance.OnCameraLook;
+                @CameraLook.performed += instance.OnCameraLook;
+                @CameraLook.canceled += instance.OnCameraLook;
+                @CameraMove.started += instance.OnCameraMove;
+                @CameraMove.performed += instance.OnCameraMove;
+                @CameraMove.canceled += instance.OnCameraMove;
+                @UpButton.started += instance.OnUpButton;
+                @UpButton.performed += instance.OnUpButton;
+                @UpButton.canceled += instance.OnUpButton;
+                @DownButton.started += instance.OnDownButton;
+                @DownButton.performed += instance.OnDownButton;
+                @DownButton.canceled += instance.OnDownButton;
+                @MoveFasterButton.started += instance.OnMoveFasterButton;
+                @MoveFasterButton.performed += instance.OnMoveFasterButton;
+                @MoveFasterButton.canceled += instance.OnMoveFasterButton;
+                @BackButton.started += instance.OnBackButton;
+                @BackButton.performed += instance.OnBackButton;
+                @BackButton.canceled += instance.OnBackButton;
+                @ScreenshotButton.started += instance.OnScreenshotButton;
+                @ScreenshotButton.performed += instance.OnScreenshotButton;
+                @ScreenshotButton.canceled += instance.OnScreenshotButton;
+            }
+        }
+    }
+    public CameraControlsActions @CameraControls => new CameraControlsActions(this);
     private int m_DefaultControllersSchemeIndex = -1;
     public InputControlScheme DefaultControllersScheme
     {
@@ -1272,5 +1624,15 @@ public class @MainControls : IInputActionCollection, IDisposable
     public interface IWalkingControlsActions
     {
         void OnNewaction(InputAction.CallbackContext context);
+    }
+    public interface ICameraControlsActions
+    {
+        void OnCameraLook(InputAction.CallbackContext context);
+        void OnCameraMove(InputAction.CallbackContext context);
+        void OnUpButton(InputAction.CallbackContext context);
+        void OnDownButton(InputAction.CallbackContext context);
+        void OnMoveFasterButton(InputAction.CallbackContext context);
+        void OnBackButton(InputAction.CallbackContext context);
+        void OnScreenshotButton(InputAction.CallbackContext context);
     }
 }

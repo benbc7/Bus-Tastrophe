@@ -13,7 +13,7 @@ public class HotLapTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("trigger hit: " + other.tag);
+        //print("trigger hit: " + other.tag);
         if (other.tag == "Player")
         {
             timeTrialManager.cycleAttempt();

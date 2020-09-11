@@ -47,4 +47,5 @@ public class SaveData {
 	[Range (0f, 1f)] public float masterVolume;
 	[Range (0f, 1f)] public float musicVolume;
 	[Range (0f, 1f)] public float soundEffectsVolume;
+	public bool isAutomaticTransmission;
 }

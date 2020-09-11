@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenuManager : MonoBehaviour {
 
 	public static PauseMenuManager instance;
 
 	public GameObject pauseMenuCanvas;
+	public Selectable firstButton;
 
+	private bool isPaused;
 	private bool isFreeLookMode;
 
 	private void Awake () {
@@ -24,7 +27,7 @@ public class PauseMenuManager : MonoBehaviour {
 	private void Update () {
 		if (isFreeLookMode && !LevelManager.instance.isFreeLookMode) {
 			isFreeLookMode = false;
-			pauseMenuCanvas.SetActive (true);
+			pauseMenuCanvas.SetActive (isPaused);
 		}
 	}
 
@@ -35,7 +38,9 @@ public class PauseMenuManager : MonoBehaviour {
 
 	public void OnPauseButton () {
 		LevelManager.instance.PauseGame ();
-		pauseMenuCanvas.SetActive (!pauseMenuCanvas.activeSelf);
+		isPaused = !isPaused;
+		pauseMenuCanvas.SetActive (isPaused);
+		firstButton.Select ();
 	}
 
 	public void OnFreeLookCameraButton () {

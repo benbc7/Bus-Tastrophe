@@ -18,11 +18,8 @@ public class CameraController : MonoBehaviour, MainControls.ICameraControlsActio
 	private float horizontalDegrees = 0f;
 	private Quaternion currentRotation;
 	private Quaternion targetRotation;
-	private Vector3 smoothRotateVelocity;
 	private Vector3 currentPosition;
 	private Vector3 targetPosition;
-	private Vector3 smoothMoveVelocity;
-	private float smoothTime = 0.2f;
 
 	private bool isPaused;
 
@@ -34,10 +31,8 @@ public class CameraController : MonoBehaviour, MainControls.ICameraControlsActio
 	}
 
 	private void OnEnable () {
-		if (controls == null) {
-			controls = new MainControls ();
-			controls.CameraControls.SetCallbacks (this);
-		}
+		controls = GameManager.instance.controls;
+		controls.CameraControls.SetCallbacks (this);
 		controls.CameraControls.Enable ();
 	}
 
@@ -150,12 +145,7 @@ public class CameraController : MonoBehaviour, MainControls.ICameraControlsActio
 	}
 
 	public void OnScreenshotButton (InputAction.CallbackContext context) {
-		if (LevelManager.instance.isFreeLookMode) {
-			if (context.started)
-				Time.timeScale = 1f;
-			else if (context.canceled)
-				Time.timeScale = 0f;
-		}
+
 	}
 
 	#endregion

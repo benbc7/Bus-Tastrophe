@@ -33,7 +33,7 @@ public class PhysicsController : MonoBehaviour
     public void fixedUpdatePhysics(PlayerInputs playerInputs, VehicleWheelMessage vwm)
     {
         Vector3 down = transform.TransformDirection(Vector3.down);
-        isGrounded = Physics.Raycast(transform.position, down, 0.5f);
+        isGrounded = Physics.Raycast(transform.position, down, 0.75f);
         if (isGrounded)
         {
             //multiply rb.velocity.magnitude by 3.6 to convert meter per second to km/h

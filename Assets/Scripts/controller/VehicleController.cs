@@ -30,6 +30,10 @@ public class VehicleController : MonoBehaviour
     [SerializeField]
     public float currentSteeringAngle = 0f;
 
+    public float currentReverseAutoBrakeInput;
+    public float currentReverseAutoAccelInput;
+
+    
     private bool isShifting;
     [SerializeField]
     private float currentFrontWheelRpm;
@@ -37,6 +41,7 @@ public class VehicleController : MonoBehaviour
     private float currentRearWheelRpm;
 
     //Maximums
+    public bool isAutomatic = true;
     public float maxTorque = 3000f;
     public float maxEngineRpm = 7000f;
     public float maxBrakeTorque = 3000f;
@@ -47,7 +52,7 @@ public class VehicleController : MonoBehaviour
     public float steerSmooth = 0.1f;
     private float baseSteerSmooth = 0.1f;
     private float steerVelocity = 0.1f;
-    private float wheelDiameter = 2.198f;
+    private float wheelDiameter = 1f;
 
     //Engine
     public bool isRedlined = false;
@@ -147,19 +152,51 @@ public class VehicleController : MonoBehaviour
 
     public void fixedUpdateVehicle(PlayerInputs pi)
     {
+      
         if (!isShifting)
         {
-            if (pi.gearUpButtonDown && currentGear < gears.Length - 1)
-                StartCoroutine(changeGear(currentGear += 1));
-
-            else if (pi.gearDownButtonDown && currentGear > 0)
-                StartCoroutine(changeGear(currentGear -= 1));
+            if (isAutomatic)
+                fixedUpdateAutomatic(pi);
+            else
+                fixedUpdateManual(pi);
         }
 
         VehicleWheelMessage vehicleWheelMessage = calculateVehiclePhysics(pi);
         ApplyWheelPhysics(pi, vehicleWheelMessage);
         physicsController.fixedUpdatePhysics(pi, vehicleWheelMessage);
     }
+    private void fixedUpdateAutomatic(PlayerInputs pi)
+    {
+        if (currentGear < gears.Length - 1 && currentEngineRpm >= maxEngineRpm * 0.8f && currentGear != 0)
+            StartCoroutine(changeGear(currentGear += 1));
+
+        else if (currentGear > 1 && currentEngineRpm <= 3000)
+            StartCoroutine(changeGear(currentGear -= 1));
+
+        //put it in reverse!
+        if (rb.velocity.magnitude <= 0.1f && pi.brakeInput > 0.1f && currentGear != 0)
+        {
+            StartCoroutine(changeGear(0));
+        }
+
+        if (currentGear == 0)
+        {
+            if (rb.velocity.magnitude <= 0.1f && (pi.accelInput > pi.brakeInput))
+                StartCoroutine(changeGear(1));
+            currentReverseAutoAccelInput = pi.brakeInput;
+            currentReverseAutoBrakeInput = pi.accelInput;
+        }
+
+    }
+    private void fixedUpdateManual(PlayerInputs pi)
+    {
+        if (currentGear < gears.Length - 1 && pi.gearUpButtonDown)
+            StartCoroutine(changeGear(currentGear += 1));
+
+        else if (currentGear > 1 && pi.gearDownButtonDown)
+            StartCoroutine(changeGear(currentGear -= 1));
+    }
+
     private void ApplyWheelPhysics(PlayerInputs pi, VehicleWheelMessage vehicleWheelMessage)
     {
         currentFrontWheelRpm = 0;
@@ -190,8 +227,18 @@ public class VehicleController : MonoBehaviour
         //STOP GO TURN
         //meters per second >> kph
         currentSpeed = rb.velocity.magnitude * 3.6f;
-        calculateEngineOutputArcade(pi.accelInput);
-        calculateBrakeOutput(pi.brakeInput);
+        if (isAutomatic && currentGear == 0)
+        {
+            Debug.Log("OPPOSITE LAND! accel = brake, brake = accel");
+            calculateEngineOutputArcade(currentReverseAutoAccelInput);
+            calculateBrakeOutput(currentReverseAutoBrakeInput);
+        }
+        else
+        {
+            Debug.Log("accel = accel, brake = brake");
+            calculateEngineOutputArcade(pi.accelInput);
+            calculateBrakeOutput(pi.brakeInput);
+        }
         calculateSteeringAngle(pi.steeringInput);
         return generateVehicleMessage();
     }
@@ -256,7 +303,10 @@ public class VehicleController : MonoBehaviour
         vwm.currentSpeed = currentSpeed;
         vwm.currentBrake = currentBrake;
         vwm.currentAngle = currentSteeringAngle;
-        vwm.currentTorque = currentTorque;
+        if (currentRearWheelRpm > gears[currentGear].topWheelRpm)
+            vwm.currentTorque = 0;
+        else
+            vwm.currentTorque = currentTorque;
         vwm.isRedlined = isRedlined;
         return vwm;
     }

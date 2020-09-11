@@ -29,6 +29,11 @@ public class LevelManager : MonoBehaviour {
 	public void PauseGame () {
 		isPaused = !isPaused;
 		DisableObjectsOnPause ();
+
+		if (!isPaused) {
+			FreeLookCameraEnabled (false);
+		}
+
 		if (OnPauseGameEvent != null) {
 			OnPauseGameEvent (isPaused);
 			Time.timeScale = isPaused ? 0f : 1f;

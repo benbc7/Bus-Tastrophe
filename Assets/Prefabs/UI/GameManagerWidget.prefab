@@ -935,6 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuCanvas: {fileID: 426991382691108429}
+  firstButton: {fileID: 3102577996176223486}
 --- !u!1 &5601159490870436626
 GameObject:
   m_ObjectHideFlags: 0

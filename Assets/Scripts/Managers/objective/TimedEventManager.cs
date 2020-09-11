@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimedEventManager : GameManager
+public class TimedEventManager : GameTypeManager
 {
     //instantiates
     public GameObject timeWidget;

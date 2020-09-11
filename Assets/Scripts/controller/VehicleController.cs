@@ -229,13 +229,13 @@ public class VehicleController : MonoBehaviour
         currentSpeed = rb.velocity.magnitude * 3.6f;
         if (isAutomatic && currentGear == 0)
         {
-            Debug.Log("OPPOSITE LAND! accel = brake, brake = accel");
+            //Debug.Log("OPPOSITE LAND! accel = brake, brake = accel");
             calculateEngineOutputArcade(currentReverseAutoAccelInput);
             calculateBrakeOutput(currentReverseAutoBrakeInput);
         }
         else
         {
-            Debug.Log("accel = accel, brake = brake");
+            //Debug.Log("accel = accel, brake = brake");
             calculateEngineOutputArcade(pi.accelInput);
             calculateBrakeOutput(pi.brakeInput);
         }

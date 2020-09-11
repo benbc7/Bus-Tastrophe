@@ -401,6 +401,14 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""PauseButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""f447baec-4240-4864-bda1-54377cd45223"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -909,6 +917,28 @@ public class @MainControls : IInputActionCollection, IDisposable
                     ""action"": ""SwitchCameraButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""290f5601-1164-4924-a04a-ea658fb920bd"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultKeyboardMouse"",
+                    ""action"": ""PauseButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5068bee-b1d1-49c2-9237-45e760b20c90"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""DefaultControllers"",
+                    ""action"": ""PauseButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1250,6 +1280,7 @@ public class @MainControls : IInputActionCollection, IDisposable
         m_DrivingControls_Roll = m_DrivingControls.FindAction("Roll", throwIfNotFound: true);
         m_DrivingControls_Yaw = m_DrivingControls.FindAction("Yaw", throwIfNotFound: true);
         m_DrivingControls_SwitchCameraButton = m_DrivingControls.FindAction("SwitchCameraButton", throwIfNotFound: true);
+        m_DrivingControls_PauseButton = m_DrivingControls.FindAction("PauseButton", throwIfNotFound: true);
         // WalkingControls
         m_WalkingControls = asset.FindActionMap("WalkingControls", throwIfNotFound: true);
         m_WalkingControls_Newaction = m_WalkingControls.FindAction("New action", throwIfNotFound: true);
@@ -1371,6 +1402,7 @@ public class @MainControls : IInputActionCollection, IDisposable
     private readonly InputAction m_DrivingControls_Roll;
     private readonly InputAction m_DrivingControls_Yaw;
     private readonly InputAction m_DrivingControls_SwitchCameraButton;
+    private readonly InputAction m_DrivingControls_PauseButton;
     public struct DrivingControlsActions
     {
         private @MainControls m_Wrapper;
@@ -1386,6 +1418,7 @@ public class @MainControls : IInputActionCollection, IDisposable
         public InputAction @Roll => m_Wrapper.m_DrivingControls_Roll;
         public InputAction @Yaw => m_Wrapper.m_DrivingControls_Yaw;
         public InputAction @SwitchCameraButton => m_Wrapper.m_DrivingControls_SwitchCameraButton;
+        public InputAction @PauseButton => m_Wrapper.m_DrivingControls_PauseButton;
         public InputActionMap Get() { return m_Wrapper.m_DrivingControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1428,6 +1461,9 @@ public class @MainControls : IInputActionCollection, IDisposable
                 @SwitchCameraButton.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnSwitchCameraButton;
                 @SwitchCameraButton.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnSwitchCameraButton;
                 @SwitchCameraButton.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnSwitchCameraButton;
+                @PauseButton.started -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnPauseButton;
+                @PauseButton.performed -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnPauseButton;
+                @PauseButton.canceled -= m_Wrapper.m_DrivingControlsActionsCallbackInterface.OnPauseButton;
             }
             m_Wrapper.m_DrivingControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -1465,6 +1501,9 @@ public class @MainControls : IInputActionCollection, IDisposable
                 @SwitchCameraButton.started += instance.OnSwitchCameraButton;
                 @SwitchCameraButton.performed += instance.OnSwitchCameraButton;
                 @SwitchCameraButton.canceled += instance.OnSwitchCameraButton;
+                @PauseButton.started += instance.OnPauseButton;
+                @PauseButton.performed += instance.OnPauseButton;
+                @PauseButton.canceled += instance.OnPauseButton;
             }
         }
     }
@@ -1620,6 +1659,7 @@ public class @MainControls : IInputActionCollection, IDisposable
         void OnRoll(InputAction.CallbackContext context);
         void OnYaw(InputAction.CallbackContext context);
         void OnSwitchCameraButton(InputAction.CallbackContext context);
+        void OnPauseButton(InputAction.CallbackContext context);
     }
     public interface IWalkingControlsActions
     {

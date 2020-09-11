@@ -388,6 +388,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "PauseButton",
+                    "type": "Button",
+                    "id": "f447baec-4240-4864-bda1-54377cd45223",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -894,6 +902,28 @@
                     "processors": "",
                     "groups": "DefaultKeyboardMouse",
                     "action": "SwitchCameraButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "290f5601-1164-4924-a04a-ea658fb920bd",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DefaultKeyboardMouse",
+                    "action": "PauseButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5068bee-b1d1-49c2-9237-45e760b20c90",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "DefaultControllers",
+                    "action": "PauseButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

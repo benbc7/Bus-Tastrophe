@@ -5,20 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour {
 
-    public static PauseMenuManager instance;
+	public static PauseMenuManager instance;
 
-    public GameObject pauseMenuCanvas;
+	public GameObject pauseMenuCanvas;
 
-    private bool isPaused;
+	private bool isFreeLookMode;
 
-	public void returnToMainMenu () {
-        print ("returning to main menu");
-        SceneManager.LoadScene ("mainmenu");
-    }
+	private void Awake () {
+		if (instance == null) {
+			instance = this;
+		} else if (instance != this) {
+			Destroy (this);
+		}
 
-    public void OnPauseGame () {
-        isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0f : 1f;
-        //pauseMenuCanvas.SetActive (isPaused);
+		pauseMenuCanvas.SetActive (false);
+	}
+
+	private void Update () {
+		if (isFreeLookMode && !LevelManager.instance.isFreeLookMode) {
+			isFreeLookMode = false;
+			pauseMenuCanvas.SetActive (true);
+		}
+	}
+
+	public void OnQuitButton () {
+		print ("returning to main menu");
+		SceneManager.LoadScene ("mainmenu");
+	}
+
+	public void OnPauseButton () {
+		LevelManager.instance.PauseGame ();
+		pauseMenuCanvas.SetActive (!pauseMenuCanvas.activeSelf);
+	}
+
+	public void OnFreeLookCameraButton () {
+		isFreeLookMode = true;
+		pauseMenuCanvas.SetActive (false);
+		LevelManager.instance.FreeLookCameraEnabled (true);
 	}
 }

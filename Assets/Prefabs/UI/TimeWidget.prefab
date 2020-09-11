@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 770340938506564195}
   - component: {fileID: 4899752757743738792}
   - component: {fileID: 3522943291778740022}
+  - component: {fileID: 7080564875989257078}
   m_Layer: 5
   m_Name: TimeWidget
   m_TagString: Untagged
@@ -564,6 +565,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7080564875989257078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511998621406224426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c114f46cf8f1bf14dbbd05dc3eef86e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToDisable:
+  - {fileID: 3522943291778740022}
+  - {fileID: 4275169427874595662}
+  - {fileID: 4275169427874595663}
+  - {fileID: 4275169427447879106}
+  - {fileID: 4275169427447879107}
+  - {fileID: 3341461897419090064}
+  - {fileID: 622811014373662791}
+  - {fileID: 4652351731619886946}
+  - {fileID: 3703526358187639265}
 --- !u!1 &7318706716319727172
 GameObject:
   m_ObjectHideFlags: 0

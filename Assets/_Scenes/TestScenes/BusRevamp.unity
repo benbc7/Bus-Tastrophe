@@ -13420,49 +13420,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 403518545187041263, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: forwardPitchCenterOfMass.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 403518545187041263, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: airYawSpeed
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 403518545187041263, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: airRollSpeed
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 403518545187041263, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: airPitchSpeed
-      value: 5000
+      propertyPath: groundedRollSpeed
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 403518545187041263, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
       propertyPath: groundedYawSpeed
-      value: 5000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 403518545187041263, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: groundedRollSpeed
-      value: 5000
+      propertyPath: airYawSpeed
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 403518545187041263, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: groundedPitchSpeed
-      value: 100000
+      propertyPath: airPitchSpeed
+      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 403518545187041263, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: backwardPitchCenterOfMass.z
-      value: -5
+      propertyPath: airRollSpeed
+      value: 15000
       objectReference: {fileID: 0}
-    - target: {fileID: 2138516800828616692, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.216
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774539634868081876, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7beb53ce9eeaaf64898918ca37c6008b, type: 2}
-    - target: {fileID: 4774539635274126881, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7beb53ce9eeaaf64898918ca37c6008b, type: 2}
     - target: {fileID: 4775219789913223542, guid: 85f3da71edd4cc7428f57ce047252513, type: 3}
       propertyPath: m_Name
       value: Bus02

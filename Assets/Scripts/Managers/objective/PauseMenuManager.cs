@@ -32,7 +32,6 @@ public class PauseMenuManager : MonoBehaviour {
 	}
 
 	public void OnQuitButton () {
-		print ("returning to main menu");
 		SceneManager.LoadScene ("mainmenu");
 	}
 

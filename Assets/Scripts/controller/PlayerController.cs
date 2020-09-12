@@ -20,9 +20,7 @@ public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActi
 	private MainControls controls;
 
 	private void Awake () {
-		controls = GameManager.instance.controls;
-		controls.DrivingControls.SetCallbacks (this);
-		controls.DrivingControls.Enable ();
+
 	}
 
 	private void OnDisble () {
@@ -36,6 +34,10 @@ public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActi
 		rb = GetComponent<Rigidbody> ();
 		startingLocation = transform.position;
 		startingRotation = transform.rotation;
+
+		controls = GameManager.instance.controls;
+		controls.DrivingControls.SetCallbacks (this);
+		controls.DrivingControls.Enable ();
 	}
 
 	private void Update () {
@@ -106,7 +108,6 @@ public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActi
 		if (context.started) {
 			//if (PauseMenuManager.instance != null) {
 			PauseMenuManager.instance.OnPauseButton ();
-			print (gameObject.GetInstanceID ());
 			//}
 		}
 	}

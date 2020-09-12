@@ -28,9 +28,6 @@ public class CameraController : MonoBehaviour, MainControls.ICameraControlsActio
 
 	private void Start () {
 		LevelManager.instance.OnPauseGameEvent += OnPauseGame;
-	}
-
-	private void OnEnable () {
 		controls = GameManager.instance.controls;
 		controls.CameraControls.SetCallbacks (this);
 		controls.CameraControls.Enable ();

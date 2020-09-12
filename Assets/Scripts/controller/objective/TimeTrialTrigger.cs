@@ -19,7 +19,7 @@ public class TimeTrialTrigger : MonoBehaviour
         {
             if (isStart)
             {
-                GameManager.instance.resetObjective();
+                GameTypeManager.instance.resetObjective();
                 timeTrialManager.startAttempt();
             }
             else

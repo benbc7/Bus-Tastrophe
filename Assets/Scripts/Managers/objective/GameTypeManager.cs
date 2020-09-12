@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameTypeManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameTypeManager instance;
 
     private PlayerController[] playerControllers;
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-//using Rewired;
 
 public class PlayerController : MonoBehaviour, MainControls.IDrivingControlsActions {
 

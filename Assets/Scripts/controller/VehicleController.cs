@@ -8,6 +8,7 @@ public class VehicleController : MonoBehaviour
     VehicleAudioController audioController;
     VehicleUIController vehicleUIController;
     private PhysicsController physicsController;
+    private BusPassengerTracker busPassengerTracker;
 
     private Rigidbody rb;
 
@@ -90,6 +91,7 @@ public class VehicleController : MonoBehaviour
         audioController = GetComponentInChildren<VehicleAudioController>();
         physicsController = GetComponentInChildren<PhysicsController>();
         vehicleUIController = GetComponentInChildren<VehicleUIController>();
+        busPassengerTracker = GetComponentInChildren<BusPassengerTracker>();
         rb = GetComponent<Rigidbody>();
         baseSteerSmooth = steerSmooth;
         Mathf.Clamp(currentGear, 0, 5);
@@ -170,7 +172,7 @@ public class VehicleController : MonoBehaviour
         if (currentGear < gears.Length - 1 && currentEngineRpm >= maxEngineRpm * 0.8f && currentGear != 0)
             StartCoroutine(changeGear(currentGear += 1));
 
-        else if (currentGear > 1 && currentEngineRpm <= 3000)
+        else if (currentGear > 1 && currentEngineRpm <= 4500f)
             StartCoroutine(changeGear(currentGear -= 1));
 
         //put it in reverse!
@@ -193,7 +195,7 @@ public class VehicleController : MonoBehaviour
         if (currentGear < gears.Length - 1 && pi.gearUpButtonDown)
             StartCoroutine(changeGear(currentGear += 1));
 
-        else if (currentGear > 1 && pi.gearDownButtonDown)
+        else if (currentGear > 0 && pi.gearDownButtonDown)
             StartCoroutine(changeGear(currentGear -= 1));
     }
 
@@ -221,6 +223,11 @@ public class VehicleController : MonoBehaviour
         isShifting = false;
     }
 
+    public void updatePassengerCount(int passengerCount)
+    {
+        vehicleUIController.updatePassengerCountUI(passengerCount);
+    }
+
 
     private VehicleWheelMessage calculateVehiclePhysics(PlayerInputs pi)
     {
@@ -229,13 +236,11 @@ public class VehicleController : MonoBehaviour
         currentSpeed = rb.velocity.magnitude * 3.6f;
         if (isAutomatic && currentGear == 0)
         {
-            //Debug.Log("OPPOSITE LAND! accel = brake, brake = accel");
             calculateEngineOutputArcade(currentReverseAutoAccelInput);
             calculateBrakeOutput(currentReverseAutoBrakeInput);
         }
         else
         {
-            //Debug.Log("accel = accel, brake = brake");
             calculateEngineOutputArcade(pi.accelInput);
             calculateBrakeOutput(pi.brakeInput);
         }

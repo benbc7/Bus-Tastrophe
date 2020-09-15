@@ -7,14 +7,12 @@ public class TimedEventManager : GameTypeManager
 {
     //instantiates
     public GameObject timeWidget;
-    public GameObject splitUI;
+    public GameObject splitUIPrefab;
 
     //static vars
     [SerializeField]
-    public float timeToBeatSeconds;
-    public float goldTime;
-    public float silverTime;
-    public float bronzeTime;
+    public float timeGoalSeconds;
+    public float passengerCountGoal;
     public static float defaultBestTimeSeconds = 600f; //always 15 mins
 
     //dynamic vars
@@ -34,8 +32,7 @@ public class TimedEventManager : GameTypeManager
     private Text bestAttemptTxt;
     private Text lastAttemptTxt;
 
-    private List<Text> bestSplitsTexts = new List<Text>();
-    private List<Text> currentSplitsTexts = new List<Text>();
+    private List<SplitUI> splitUIs = new List<SplitUI>();
 
 
 
@@ -51,7 +48,7 @@ public class TimedEventManager : GameTypeManager
 
        
 
-        timeToBeatTxt.text = TimeUtility.convertFloatToTimeString(timeToBeatSeconds);
+        timeToBeatTxt.text = TimeUtility.convertFloatToTimeString(timeGoalSeconds);
         currentTimeTxt.text = "-";
         bestAttemptTxt.text = "-";
         lastAttemptTxt.text = "-";
@@ -62,13 +59,12 @@ public class TimedEventManager : GameTypeManager
         //Debug.Log("split count: " + splitCount);
         for (int i = 0; i < splitCount; i++)
         {
-            GameObject go = Instantiate(splitUI, widget.transform);
+            GameObject splitUI = Instantiate(splitUIPrefab, widget.transform);
 
-            RectTransform rectTransform = go.GetComponent<RectTransform>();
+            RectTransform rectTransform = splitUI.GetComponent<RectTransform>();
             rectTransform.position += new Vector3(0, (i *-25), 0);
-            bestSplitsTexts.Add(go.transform.Find("BestSplit").GetComponent<Text>());
-            currentSplitsTexts.Add(go.transform.Find("CurrentSplit").GetComponent<Text>());
-            go.transform.Find("SplitNumber").GetComponent<Text>().text = i.ToString();
+            splitUIs.Add(splitUI.GetComponent<SplitUI>());
+            splitUI.transform.Find("SplitNumber").GetComponent<Text>().text = i.ToString();
         }
 
 
@@ -77,15 +73,10 @@ public class TimedEventManager : GameTypeManager
     }
     private void disableUnusedSplits()
     {
-       for (int i = 0; i < bestSplitsTexts.Count; i++)
+       for (int i = 0; i < splitUIs.Count; i++)
         {
             if (i > splitCount)
-                bestSplitsTexts[i].enabled = false;
-        }
-        for (int i = 0; i < currentSplitsTexts.Count; i++)
-        {
-            if (i > splitCount)
-                currentSplitsTexts[i].enabled = false;
+                splitUIs[i].gameObject.SetActive(false);
         }
     }
     protected override void Update()
@@ -107,17 +98,17 @@ public class TimedEventManager : GameTypeManager
         currentAttempt.splitIndex = 0;
     }
 
-    public void endAttempt()
+    public void endAttempt(int passengerCount)
     {
         if (runActive == true)
         {
             runActive = false;
             //verify they hit all the checkpoints
-            submitCurrentTime();
+            submitCurrentTime(passengerCount);
         }
     }
 
-    public void submitCurrentTime()
+    public void submitCurrentTime(int passengerCount)
     {
         currentAttempt.time = currentTimeSeconds;
         bool isValidTime = TimeUtility.validateTime(currentAttempt, splitCount);
@@ -126,7 +117,7 @@ public class TimedEventManager : GameTypeManager
             lastAttempt = currentAttempt;
             lastAttemptTxt.text = TimeUtility.convertFloatToTimeString(lastAttempt.time);
             allAttempts.Add(lastAttempt);
-            if (lastAttempt.time < timeToBeatSeconds)
+            if (lastAttempt.time < timeGoalSeconds && passengerCount >= passengerCountGoal)
             {
                 transmitGameMessage("WINNER!", "Press F to pay respects.", 3);
             }
@@ -153,56 +144,62 @@ public class TimedEventManager : GameTypeManager
     }
 
     //new lap
-    public void cycleAttempt()
+    public void cycleAttempt(int passengerCount)
     {
-        endAttempt();
+        endAttempt(passengerCount);
         startAttempt();
     }
 
 
-    public void checkpoint(int index)
+    public void checkpoint(int index, int passengerCount)
     {
         //valid 
         if (currentAttempt.splitIndex == (index - 1))
         {
             currentAttempt.splitIndex += 1;
         }
-        currentAttempt.splits.Add(currentTimeSeconds);
-        updateCurrentSplit(currentAttempt.splitIndex, currentTimeSeconds);
+        Split currentSplit = new Split();
+        currentSplit.index = index;
+        currentSplit.time = currentTimeSeconds;
+        currentSplit.passengerCount = passengerCount;
+
+        currentAttempt.splits.Add(currentSplit);
+        updateCurrentSplit(currentSplit);
 
         //update splits UI
     }
-    private void updateCurrentSplit(int splitIndex, float time)
+    private void updateCurrentSplit(Split currentSplit)
     {
-        Text currentSplitText = currentSplitsTexts[splitIndex - 1];
-        currentSplitText.text = TimeUtility.convertFloatToTimeString(time);
+        SplitUI currentSplitUI = splitUIs[currentSplit.index - 1];
+        currentSplitUI.currentSplit.text = TimeUtility.convertFloatToTimeString(currentSplit.time);
+        currentSplitUI.passengerCount.text = currentSplit.passengerCount.ToString();
         if (bestAttempt != null)
         {
-            if (bestAttempt.splits[splitIndex - 1] < time)
-                currentSplitText.color = Color.red;
+            if (bestAttempt.splits[currentSplit.index - 1].time < bestAttempt.splits[currentSplit.index - 1].time)
+                currentSplitUI.currentSplit.color = Color.red;
             else
-                currentSplitText.color = Color.green;
+                currentSplitUI.currentSplit.color = Color.green;
         }
+
+
 
     }
 
     private void updateBestSplits(LapTime lap)
     {
+        
         for(int i = 0; i < lap.splits.Count; i++)
         {
-        bestSplitsTexts[i].text = TimeUtility.convertFloatToTimeString(lap.splits[i]);
+            splitUIs[i].bestSplit.text = TimeUtility.convertFloatToTimeString(lap.splits[i].time);
         }
     }
 
     private void clearCurrentSplits()
     {
-        for (int i = 0; i < currentSplitsTexts.Count; i++)
+        foreach (SplitUI splitUI in splitUIs)
         {
-            currentSplitsTexts[i].text = "-";
-            currentSplitsTexts[i].color = Color.white;
+            splitUI.currentSplit.text = "-";
+            splitUI.currentSplit.color = Color.white;
         }
     }
-
-
-
 }

@@ -412,7 +412,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012217700}
   serializedVersion: 2
   m_Mass: 6.5624986
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 7357635150082773135}
   m_Layer: 0
   m_Name: Root_M
-  m_TagString: Untagged
+  m_TagString: Passenger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -802,7 +802,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012230636}
   serializedVersion: 2
   m_Mass: 10.937502
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -868,7 +868,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012230988}
   serializedVersion: 2
   m_Mass: 2.5000002
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -958,13 +958,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7357635149012234812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.022208553, y: -0.007817503, z: 0.027181415, w: 0.9993533}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7357635149011958562}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.52, y: -0.965, z: 3.137}
 --- !u!137 &7357635149000796336
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -1345,7 +1345,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012238604}
   serializedVersion: 2
   m_Mass: 4.375001
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -1457,7 +1457,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012242534}
   serializedVersion: 2
   m_Mass: 2.5000002
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -1659,7 +1659,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012246978}
   serializedVersion: 2
   m_Mass: 4.375001
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -1892,7 +1892,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012251588}
   serializedVersion: 2
   m_Mass: 6.5624986
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -2063,7 +2063,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012255266}
   serializedVersion: 2
   m_Mass: 4.375001
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -2233,7 +2233,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012259848}
   serializedVersion: 2
   m_Mass: 6.5624986
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -2372,7 +2372,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012261468}
   serializedVersion: 2
   m_Mass: 4.375001
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -3156,7 +3156,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012293070}
   serializedVersion: 2
   m_Mass: 4.375001
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -3317,6 +3317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ca74070ff003c4ea887d95c471624d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdollEnabled: 0
 --- !u!114 &7660465981101039862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3329,9 +3330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af69d8fa42e868e42af209fe0d86e264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ragdollEnabled: 0
   physicsMaterial: {fileID: 13400000, guid: eb345c9782eadcc49811f3a649e59bb4, type: 2}
   totalMass: 75
+  drag: 0.05
   collisionMode: 1
 --- !u!1 &7357635149012297212
 GameObject:
@@ -3408,7 +3409,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012298888}
   serializedVersion: 2
   m_Mass: 6.5624986
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1
@@ -3547,7 +3548,7 @@ Rigidbody:
   m_GameObject: {fileID: 7357635149012301426}
   serializedVersion: 2
   m_Mass: 10.937502
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 1

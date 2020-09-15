@@ -13,10 +13,10 @@ public class HotLapTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //print("trigger hit: " + other.tag);
         if (other.tag == "Player")
         {
-            timeTrialManager.cycleAttempt();
+            int passengerCount = other.gameObject.GetComponentInParent<BusPassengerTracker>().passengerCount;
+            timeTrialManager.cycleAttempt(passengerCount);
         }
     }
 }

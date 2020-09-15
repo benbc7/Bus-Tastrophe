@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TriggerType
+{
+    START,
+    SPLIT,
+    FINISH
+}
+
 public class TimeTrialTrigger : MonoBehaviour
 {
-    public bool isStart;
+    public TriggerType triggerType;
+    public int index;
     private TimedEventManager timeTrialManager;
 
     void Start()
@@ -17,13 +25,23 @@ public class TimeTrialTrigger : MonoBehaviour
         print("trigger hit: " + other.tag);
         if (other.tag == "Player")
         {
-            if (isStart)
+            int passengerCount = other.gameObject.GetComponentInParent<BusPassengerTracker>().passengerCount;
+            switch (triggerType)
             {
-                GameTypeManager.instance.resetObjective();
-                timeTrialManager.startAttempt();
+                case TriggerType.START:
+                    GameTypeManager.instance.resetObjective();
+                    timeTrialManager.startAttempt();
+                    break;
+                case TriggerType.SPLIT:
+                    timeTrialManager.checkpoint(index, passengerCount);
+                    break;
+                case TriggerType.FINISH:
+                    timeTrialManager.endAttempt(passengerCount);
+                    break;
+                default:
+                    Debug.Log("No triggerType");
+                    break;
             }
-            else
-                timeTrialManager.endAttempt();
         }
     }
 }

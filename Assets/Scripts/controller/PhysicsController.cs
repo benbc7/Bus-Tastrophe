@@ -21,6 +21,16 @@ public class PhysicsController : MonoBehaviour
     public int groundedRollSpeed;
     public int groundedPitchSpeed;
 
+    public float airBrakeDrag = 0.25f;
+    public float airBrakeAngularDrag = 0.05f;
+    private float defaultDrag = 0.15f;
+    private float defaultAngularDrag = 0.15f;
+    private float dragDifference;
+    private float angularDragDifference;
+
+
+
+
     [Tooltip("Yaw torque is applied to the vehicle until it reaches this speed.")] 
     private int yawSpeedGovernerLimit = 100;
     // Start is called before the first frame update
@@ -29,11 +39,16 @@ public class PhysicsController : MonoBehaviour
         trans = transform.parent;
         rb = trans.GetComponent<Rigidbody>();
         rb.centerOfMass = centerOfMass;
+        defaultDrag = rb.drag;
+        defaultAngularDrag = rb.angularDrag;
+        dragDifference = airBrakeDrag - defaultDrag;
+        angularDragDifference = airBrakeAngularDrag - defaultAngularDrag;
+
     }
     public void fixedUpdatePhysics(PlayerInputs playerInputs, VehicleWheelMessage vwm)
     {
         Vector3 down = transform.TransformDirection(Vector3.down);
-        isGrounded = Physics.Raycast(transform.position, down, 0.75f);
+        isGrounded = Physics.Raycast(transform.position, down, 1.3f);
         if (isGrounded)
         {
             //multiply rb.velocity.magnitude by 3.6 to convert meter per second to km/h
@@ -61,9 +76,11 @@ public class PhysicsController : MonoBehaviour
 
             if (playerInputs.handBrakeButton)
                 rb.AddRelativeTorque(Vector3.up * playerInputs.steeringInput * groundedYawSpeed * 2);
+
         }
         else //in the air
         {
+
             rb.AddRelativeTorque(Vector3.up * playerInputs.yawInput * airYawSpeed);
             rb.AddRelativeTorque(Vector3.back * playerInputs.rollInput * airRollSpeed);
 
@@ -77,8 +94,9 @@ public class PhysicsController : MonoBehaviour
 
             rb.AddRelativeTorque(Vector3.up * playerInputs.steeringInput * yawSpeed * yawSpeedGoverner);
             */
-        //handbrake yaw power change
-       
+
+        rb.drag = defaultDrag + (dragDifference * playerInputs.brakeInput);
+        rb.angularDrag = defaultAngularDrag + (dragDifference * playerInputs.brakeInput);
 
 
     }

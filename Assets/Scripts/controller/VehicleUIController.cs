@@ -11,6 +11,7 @@ public class VehicleUIController : MonoBehaviour
     private Text gearText;
     private Text kphText;
     private Text rpmText;
+    private Text passengerCountText;
     private RectTransform tachNeedle;
 
 
@@ -37,6 +38,8 @@ public class VehicleUIController : MonoBehaviour
         gearText = widget.transform.Find("gearText").gameObject.GetComponent<Text>();
         kphText = widget.transform.Find("kphText").gameObject.GetComponent<Text>();
         rpmText = widget.transform.Find("rpmText").gameObject.GetComponent<Text>();
+        passengerCountText = widget.transform.Find("passengerCountText").gameObject.GetComponent<Text>();
+        
         tachNeedle = widget.transform.Find("tachNeedle").gameObject.GetComponent<RectTransform>();
         
     }
@@ -46,6 +49,11 @@ public class VehicleUIController : MonoBehaviour
             gearText.text = "R";
         else
             gearText.text = gear.ToString();
+    }
+
+    public void updatePassengerCountUI(int passengerCount)
+    {
+        passengerCountText.text = passengerCount.ToString();
     }
 
     public void updateUI(float currentSpeed, float currentRpm)

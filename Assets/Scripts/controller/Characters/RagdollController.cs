@@ -7,6 +7,7 @@ public class RagdollController : MonoBehaviour {
 	//public bool ragdollEnabled;
 	public PhysicMaterial physicsMaterial;
 	public float totalMass;
+    public float drag;
 	public CollisionDetectionMode collisionMode;
 
 	private Rigidbody[] rigidBodies;
@@ -73,6 +74,18 @@ public class RagdollController : MonoBehaviour {
 		}
 	}
 
+    private void setRagdollDrag()
+    {
+        if (rigidBodies == null || rigidBodies.Length == 0)
+        {
+            GetAllRagdollComponents();
+        }
+        foreach (Rigidbody rb in rigidBodies)
+        {
+            rb.drag = drag;
+        }
+    }
+
 	public void SetRagdollMass (float newMass) {
 		totalMass = newMass;
 		SetRagdollMass ();
@@ -114,6 +127,7 @@ public class RagdollController : MonoBehaviour {
 			totalMass = 20f;
 		}
 		SetRagdollMass ();
+        setRagdollDrag();
 
 		if (collisionMode != currentCollisionMode) {
 			SetCollisionDetectionMode ();

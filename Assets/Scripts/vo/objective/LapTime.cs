@@ -6,5 +6,6 @@ public class LapTime
 {
     public float time;
     public int splitIndex = 0;
-    public List<float> splits = new List<float>();
+    public List<Split> splits = new List<Split>();
+    public int passengersDelivered;
 }

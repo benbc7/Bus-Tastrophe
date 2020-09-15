@@ -14,10 +14,10 @@ public class SplitTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("trigger hit: " + other.tag);
         if (other.tag == "Player")
         {
-            timeTrialManager.checkpoint(splitIndex);
+            int passengerCount = other.gameObject.GetComponentInParent<BusPassengerTracker>().passengerCount;
+            timeTrialManager.checkpoint(splitIndex, passengerCount);
         }
     }
 }
